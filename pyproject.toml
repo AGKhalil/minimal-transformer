@@ -1,0 +1,52 @@
+[build-system] 
+requires = ["hatchling<=1.18.0"]
+build-backend = "hatchling.build"
+
+
+[options]
+packages = "find:"
+zip_safe = "True"
+
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[project]
+name = "minimal_transformer"
+authors = [
+    {name="Ahmed Khalil", email="elghazalykhalil@gmail.com"},
+]
+maintainers = [
+    {name="Ahmed Khalil", email="elghazalykhalil@gmail.com"},
+]
+version = "1.0.0"
+
+requires-python = ">=3.7"
+
+description = "Minimal transformer implementation."
+long_description = "file: README.md"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "black==24.2.0",
+    "docformatter==1.7.5",
+    "einops==0.7.0",
+    "flake8==5.0.4",
+    "isort==5.13.2",
+    "numpy==1.24.4",
+    "pandas==2.0.3",
+    "pre-commit==3.5.0",
+    "torch==2.2.1",
+    "tqdm==4.66.2",
+    "rotary-embedding-torch==0.5.3",
+    "wget==3.2",
+]
+
+[tool.black]
+line-length = 79
+target-version = ['py37']
+force-exclude = "__init__.py"
