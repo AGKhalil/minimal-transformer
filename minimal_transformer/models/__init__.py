@@ -1,0 +1,1 @@
+from minimal_transformer.models.model import TransformerModel

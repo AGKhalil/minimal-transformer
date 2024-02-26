@@ -1,3 +1,3 @@
-from minimal_transformer.data_utils import create_tokenized_dataset
-from minimal_transformer.data_utils import download_and_unzip_data
-from minimal_transformer.dataset import MTDataset
+from minimal_transformer import datasets
+from minimal_transformer import models
+from minimal_transformer import trainers

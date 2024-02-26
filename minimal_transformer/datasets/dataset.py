@@ -1,3 +1,5 @@
+import os
+
 import numpy as np
 import pandas as pd
 from torch.utils.data import Dataset
@@ -16,8 +18,9 @@ class MTDataset(Dataset):
 
     def __init__(
         self,
-        eng_csv_path: str = ".data/eng.csv",
-        deu_csv_path: str = ".data/deu.csv",
+        data_path: str = ".data",
+        eng_csv_path: str = "eng.csv",
+        deu_csv_path: str = "deu.csv",
     ) -> None:
         """Initializes the MTDataset with data from CSV files containing
         English and German sentences.
@@ -28,8 +31,8 @@ class MTDataset(Dataset):
             deu_csv_path (str): The path to the CSV file containing German
                 sentences.
         """
-        eng_sentences = pd.read_csv(eng_csv_path)
-        deu_sentences = pd.read_csv(deu_csv_path)
+        eng_sentences = pd.read_csv(os.path.join(data_path, eng_csv_path))
+        deu_sentences = pd.read_csv(os.path.join(data_path, deu_csv_path))
 
         self.source = np.array(eng_sentences, dtype=int)
         self.target = np.array(deu_sentences, dtype=int)
