@@ -3,7 +3,10 @@ This repo contains a minimal seq2seq transformer implementation and is applied t
 
 # Installation
 ```
-git clone 
+conda create -n mint python==3.8.1
+conda activate mint
+
+git clone git@github.com:AGKhalil/minimal-transformer.git
 cd minimal-transformer
 pip install -e .
 ```
